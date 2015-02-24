@@ -14,6 +14,11 @@ public class Enemy : MonoBehaviour {
     #endregion
 
     #region Méthodes publiques
+    public void Die () {
+        Instantiate (explosion, transform.position, transform.rotation);
+        Destroy (gameObject);
+    }
+
     void MakeDamage (int damage) {
         life -= damage;
 
@@ -24,21 +29,9 @@ public class Enemy : MonoBehaviour {
     #endregion
 
     #region Méthodes privées
-    void Die () {
-        Instantiate (explosion, transform.position, transform.rotation);
-        Destroy (gameObject);
-    }
-
-    void OnCollisionEnter (Collision other) {
-        if ("Fortress" == other.gameObject.tag) {
-            other.gameObject.GetComponent<Fortress> ().life -= strength;
-            Die ();
-        }
-    }
-
     void Start () {
         navMeshAgent = GetComponent<NavMeshAgent> ();
-        target = GameObject.FindGameObjectWithTag ("Fortress").transform;
+        target = GameObject.Find ("Door").transform;
         navMeshAgent.SetDestination (target.position);
     }
 

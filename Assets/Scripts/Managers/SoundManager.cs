@@ -4,6 +4,7 @@ using System.Collections;
 public class SoundManager : MonoBehaviour {
     #region enum publics
     public enum SoundName {
+        BACKGROUND_MUSIC,
         SHOOT
     };
     #endregion
@@ -39,8 +40,11 @@ public class SoundManager : MonoBehaviour {
         int soundIndex = -1;
 
         switch (soundName) {
-            case SoundName.SHOOT:
+            case SoundName.BACKGROUND_MUSIC:
                 soundIndex = 0;
+                break;
+            case SoundName.SHOOT:
+                soundIndex = 1;
                 break;
         }
 

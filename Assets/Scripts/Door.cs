@@ -9,8 +9,8 @@ public class Door : MonoBehaviour {
     #region Méthodes privées
     void OnTriggerEnter (Collider other) {
         if ("Enemy" == other.gameObject.tag) {
-            fortress.life--;
-            fortress.UpdateUI ();
+            Camera.main.GetComponent<WHCameraShake> ().doShake ();
+            fortress.MakeDamage (other.GetComponent<Enemy> ().strength);
             other.GetComponent<Enemy> ().Die ();
         }
     }

@@ -22,13 +22,7 @@ public class Shoot : MonoBehaviour {
 		
 		if (Physics.Raycast(transform.position, direction, out hit, scope)) {
 			Quaternion tempRot = Quaternion.FromToRotation (Vector3.up, hit.normal);
-			
 			Instantiate (impact, hit.point, tempRot);
-
-			if (hit.rigidbody) {
-                hit.rigidbody.AddForce (strength * direction);
-			}
-
             hit.collider.SendMessageUpwards ("MakeDamage", damage, SendMessageOptions.DontRequireReceiver);
         }
 

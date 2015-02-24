@@ -14,6 +14,15 @@ public class Fortress : MonoBehaviour {
     #endregion
 
     #region Méthodes publiques
+    public void MakeDamage (int damage) {
+        life = Mathf.Clamp (life - damage, 0, lifeMax);
+        UpdateUI ();
+
+        if (life <= 0) {
+            Destroy (gameObject);
+        }
+    }
+
     public void UpdateUI () {
         lifeUI.GetComponent<Text> ().text = "" + life;
         lifeMaxUI.GetComponent<Text> ().text = "" + lifeMax;
@@ -22,10 +31,6 @@ public class Fortress : MonoBehaviour {
 
     #region Méthodes privées
     void FixedUpdate () {
-        
-    }
-
-    void Shake () {
         
     }
 

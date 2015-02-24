@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour {
         Destroy (gameObject);
     }
 
-    void MakeDamage (int damage) {
+    public void MakeDamage (int damage) {
         life -= damage;
 
         if (life <= 0) {

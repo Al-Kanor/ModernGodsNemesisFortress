@@ -1,0 +1,7 @@
+C:\Users\Famille\Documents\Unity Projects\Modern-Gods-Genesis\Serverside Code\Game Code\bin\Debug\Modern-Gods-Genesis.dll
+C:\Users\Famille\Documents\Unity Projects\Modern-Gods-Genesis\Serverside Code\Game Code\bin\Debug\Modern-Gods-Genesis.pdb
+C:\Users\Famille\Documents\Unity Projects\Modern-Gods-Genesis\Serverside Code\Game Code\bin\Debug\Player.IO GameLibrary.dll
+C:\Users\Famille\Documents\Unity Projects\Modern-Gods-Genesis\Serverside Code\Game Code\bin\Debug\Player.IO GameLibrary.xml
+C:\Users\Famille\Documents\Unity Projects\Modern-Gods-Genesis\Serverside Code\Game Code\obj\Debug\Game Code.VS2010.csprojResolveAssemblyReference.cache
+C:\Users\Famille\Documents\Unity Projects\Modern-Gods-Genesis\Serverside Code\Game Code\obj\Debug\Modern-Gods-Genesis.dll
+C:\Users\Famille\Documents\Unity Projects\Modern-Gods-Genesis\Serverside Code\Game Code\obj\Debug\Modern-Gods-Genesis.pdb

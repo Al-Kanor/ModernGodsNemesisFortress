@@ -8,8 +8,8 @@
     <ProjectGuid>{9D801530-A9AF-4A0B-8639-B2DEB7D9E333}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ModernGodsGenesis</RootNamespace>
-    <AssemblyName>Modern-Gods-Genesis</AssemblyName>
+    <RootNamespace>NemesisFortress</RootNamespace>
+    <AssemblyName>NemesisFortress</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>

@@ -8,3 +8,13 @@ C:\Users\Famille\Documents\Unity Projects\Modern-Gods-Genesis\Serverside Code\Pl
 C:\Users\Famille\Documents\Unity Projects\Modern-Gods-Genesis\Serverside Code\Player.IO Test Server Project\obj\Debug\Player.IO Test Server.VS2010.csprojResolveAssemblyReference.cache
 C:\Users\Famille\Documents\Unity Projects\Modern-Gods-Genesis\Serverside Code\Player.IO Test Server Project\obj\Debug\Test Server.exe
 C:\Users\Famille\Documents\Unity Projects\Modern-Gods-Genesis\Serverside Code\Player.IO Test Server Project\obj\Debug\Test Server.pdb
+C:\Users\Famille\Documents\Unity Projects\ModernGodsNemesisFortress\Serverside Code\Player.IO Test Server Project\bin\Debug\Test Server.exe
+C:\Users\Famille\Documents\Unity Projects\ModernGodsNemesisFortress\Serverside Code\Player.IO Test Server Project\bin\Debug\Test Server.pdb
+C:\Users\Famille\Documents\Unity Projects\ModernGodsNemesisFortress\Serverside Code\Player.IO Test Server Project\bin\Debug\Modern-Gods-Genesis.dll
+C:\Users\Famille\Documents\Unity Projects\ModernGodsNemesisFortress\Serverside Code\Player.IO Test Server Project\bin\Debug\Player.IO Development Server.exe
+C:\Users\Famille\Documents\Unity Projects\ModernGodsNemesisFortress\Serverside Code\Player.IO Test Server Project\bin\Debug\Player.IO GameLibrary.dll
+C:\Users\Famille\Documents\Unity Projects\ModernGodsNemesisFortress\Serverside Code\Player.IO Test Server Project\bin\Debug\Modern-Gods-Genesis.pdb
+C:\Users\Famille\Documents\Unity Projects\ModernGodsNemesisFortress\Serverside Code\Player.IO Test Server Project\bin\Debug\Player.IO GameLibrary.xml
+C:\Users\Famille\Documents\Unity Projects\ModernGodsNemesisFortress\Serverside Code\Player.IO Test Server Project\obj\Debug\Player.IO Test Server.VS2010.csprojResolveAssemblyReference.cache
+C:\Users\Famille\Documents\Unity Projects\ModernGodsNemesisFortress\Serverside Code\Player.IO Test Server Project\obj\Debug\Test Server.exe
+C:\Users\Famille\Documents\Unity Projects\ModernGodsNemesisFortress\Serverside Code\Player.IO Test Server Project\obj\Debug\Test Server.pdb

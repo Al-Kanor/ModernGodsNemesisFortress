@@ -18,7 +18,7 @@ namespace ModernGodsGenesis {
 		public float posz = 0;
 	}
 
-	[RoomType("Modern-Gods-Genesis")]
+	[RoomType("NemesisFortress")]
 	public class GameCode : Game<Player> {
 		private int last_toad_id = 0;
 		private List<Toad> Toads = new List<Toad>(); 

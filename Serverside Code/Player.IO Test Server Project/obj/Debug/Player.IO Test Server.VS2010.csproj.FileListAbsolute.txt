@@ -18,8 +18,6 @@ C:\Users\Famille\Documents\Unity Projects\ModernGodsNemesisFortress\Serverside C
 C:\Users\Famille\Documents\Unity Projects\ModernGodsNemesisFortress\Serverside Code\Player.IO Test Server Project\obj\Debug\Player.IO Test Server.VS2010.csprojResolveAssemblyReference.cache
 C:\Users\Famille\Documents\Unity Projects\ModernGodsNemesisFortress\Serverside Code\Player.IO Test Server Project\obj\Debug\Test Server.exe
 C:\Users\Famille\Documents\Unity Projects\ModernGodsNemesisFortress\Serverside Code\Player.IO Test Server Project\obj\Debug\Test Server.pdb
-C:\Users\Famille\Documents\Unity Projects\NemesisFortress\Serverside Code\Player.IO Test Server Project\obj\Debug\Test Server.exe
-C:\Users\Famille\Documents\Unity Projects\NemesisFortress\Serverside Code\Player.IO Test Server Project\obj\Debug\Test Server.pdb
 C:\Users\Famille\Documents\Unity Projects\NemesisFortress\Serverside Code\Player.IO Test Server Project\bin\Debug\Test Server.exe
 C:\Users\Famille\Documents\Unity Projects\NemesisFortress\Serverside Code\Player.IO Test Server Project\bin\Debug\Test Server.pdb
 C:\Users\Famille\Documents\Unity Projects\NemesisFortress\Serverside Code\Player.IO Test Server Project\bin\Debug\NemesisFortress.dll
@@ -28,3 +26,5 @@ C:\Users\Famille\Documents\Unity Projects\NemesisFortress\Serverside Code\Player
 C:\Users\Famille\Documents\Unity Projects\NemesisFortress\Serverside Code\Player.IO Test Server Project\bin\Debug\NemesisFortress.pdb
 C:\Users\Famille\Documents\Unity Projects\NemesisFortress\Serverside Code\Player.IO Test Server Project\bin\Debug\Player.IO GameLibrary.xml
 C:\Users\Famille\Documents\Unity Projects\NemesisFortress\Serverside Code\Player.IO Test Server Project\obj\Debug\Player.IO Test Server.VS2010.csprojResolveAssemblyReference.cache
+C:\Users\Famille\Documents\Unity Projects\NemesisFortress\Serverside Code\Player.IO Test Server Project\obj\Debug\Test Server.exe
+C:\Users\Famille\Documents\Unity Projects\NemesisFortress\Serverside Code\Player.IO Test Server Project\obj\Debug\Test Server.pdb

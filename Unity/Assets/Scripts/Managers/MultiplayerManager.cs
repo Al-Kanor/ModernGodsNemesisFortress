@@ -67,7 +67,7 @@ public class MultiplayerManager : MonoBehaviour {
 		
 		client.Multiplayer.CreateJoinRoom (
 			roomId,	//Room is the Alliance of the player 
-			"Modern-Gods-Genesis",					//The room type started on the server
+            "NemesisFortress",					//The room type started on the server
 			false,									//Should the room be visible in the lobby?
 			null,   
 			null,

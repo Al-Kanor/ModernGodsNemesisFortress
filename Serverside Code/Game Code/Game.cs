@@ -5,7 +5,7 @@ using System.Collections;
 using PlayerIO.GameLibrary;
 using System.Drawing;
 
-namespace ModernGodsGenesis {
+namespace NemesisFortress {
 	public class Player : BasePlayer {
 		public float posx = 0;
 		public float posz = 0;

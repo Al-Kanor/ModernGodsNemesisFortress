@@ -60,7 +60,7 @@ public class MultiplayerManager : MonoBehaviour {
 		}
 		
 		//Create or join the room	
-		string roomId = "RoomType";
+		string roomId = "Fortress";
 		if(string.IsNullOrEmpty(roomId)){
 			roomId = userId;	
 		}

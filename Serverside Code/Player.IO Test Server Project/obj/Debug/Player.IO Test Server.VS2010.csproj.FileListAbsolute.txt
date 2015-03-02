@@ -8,3 +8,13 @@ C:\Users\Famille\Documents\Unity Projects\NemesisFortress\Serverside Code\Player
 C:\Users\Famille\Documents\Unity Projects\NemesisFortress\Serverside Code\Player.IO Test Server Project\obj\Debug\Player.IO Test Server.VS2010.csprojResolveAssemblyReference.cache
 C:\Users\Famille\Documents\Unity Projects\NemesisFortress\Serverside Code\Player.IO Test Server Project\obj\Debug\Test Server.exe
 C:\Users\Famille\Documents\Unity Projects\NemesisFortress\Serverside Code\Player.IO Test Server Project\obj\Debug\Test Server.pdb
+C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Player.IO Test Server Project\bin\Debug\Test Server.exe
+C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Player.IO Test Server Project\bin\Debug\Test Server.pdb
+C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Player.IO Test Server Project\bin\Debug\NemesisFortress.dll
+C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Player.IO Test Server Project\bin\Debug\Player.IO Development Server.exe
+C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Player.IO Test Server Project\bin\Debug\Player.IO GameLibrary.dll
+C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Player.IO Test Server Project\bin\Debug\NemesisFortress.pdb
+C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Player.IO Test Server Project\bin\Debug\Player.IO GameLibrary.xml
+C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Player.IO Test Server Project\obj\Debug\Player.IO Test Server.VS2010.csprojResolveAssemblyReference.cache
+C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Player.IO Test Server Project\obj\Debug\Test Server.exe
+C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Player.IO Test Server Project\obj\Debug\Test Server.pdb

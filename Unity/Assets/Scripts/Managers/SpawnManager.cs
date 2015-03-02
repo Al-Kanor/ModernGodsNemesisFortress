@@ -40,11 +40,11 @@ public class SpawnManager : MonoBehaviour {
                 if (0 == Random.Range (0, 2)) {
                     // 1 chance sur 2 de spawn sur une colonne
                     x = 0 == Random.Range (0, 2) ? -100 : 100;  // Colonne gauche / droite
-                    z = Random.Range (-100, 100);
+                    z = Random.Range (-100, 101);
                 }
                 else {
                     // 1 chance sur 2 de spawn sur une ligne
-                    x = Random.Range (-100, 100);
+                    x = Random.Range (-100, 101);
                     z = 0 == Random.Range (0, 2) ? -100 : 100;  // Ligne haut / bas
                 }
 

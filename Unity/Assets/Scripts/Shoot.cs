@@ -6,7 +6,7 @@ public class Shoot : MonoBehaviour {
     public int damage = 1;  // Dégats du tir
     public float rate = 0.3f;   // Cadence de tir
     public float strength = 1000;   // Force de l'impact sur la cible
-    public float scope = 100; // Portée du tir
+    public float scope = 1000; // Portée du tir
     public GameObject impact;   // Particule de l'impact
     #endregion
 

@@ -5,7 +5,8 @@ public class SpawnManager : MonoBehaviour {
     #region Attributs publics
     public float rate = 1;
     public int proba = 10;    // [proba]% de chance de spawn un ennemi toutes les [rate] secondes
-    public GameObject enemyPrefab;
+    public GameObject simpleEnemyPrefab;
+    public GameObject giantEnemyPrefab;
     #endregion
 
     #region Singleton
@@ -46,8 +47,13 @@ public class SpawnManager : MonoBehaviour {
                     x = Random.Range (-100, 100);
                     z = 0 == Random.Range (0, 2) ? -100 : 100;  // Ligne haut / bas
                 }
-                
-                Instantiate (enemyPrefab, new Vector3(x, 0, z), Quaternion.identity);
+
+                if (Random.Range (0, 100) < 90) {   // 90% de chance de spawn un ennemi simple
+                    Instantiate (simpleEnemyPrefab, new Vector3 (x, 0, z), Quaternion.identity);
+                }
+                else {  // 10% de chance de spawn un ennemi géant
+                    Instantiate (giantEnemyPrefab, new Vector3 (x, 0, z), Quaternion.identity);
+                }
             }
             yield return new WaitForSeconds (rate);
         } while (true);

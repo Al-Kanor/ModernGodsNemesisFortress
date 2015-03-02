@@ -13,6 +13,8 @@ Unity/*.user
 Unity/*.userprefs
 Unity/*.pidb
 Unity/*.booproj
+Unity/*.exe
+Unity/*_Data
 
 #Unity3D Generated File On Crash Reports
 Unity/sysinfo.txt

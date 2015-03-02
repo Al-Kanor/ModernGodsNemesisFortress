@@ -23,7 +23,15 @@ public class Shoot : MonoBehaviour {
 		if (Physics.Raycast(transform.position, direction, out hit, scope)) {
 			Quaternion tempRot = Quaternion.FromToRotation (Vector3.up, hit.normal);
 			Instantiate (impact, hit.point, tempRot);
-            hit.collider.SendMessageUpwards ("MakeDamage", damage, SendMessageOptions.DontRequireReceiver);
+
+            switch (hit.collider.gameObject.tag) {
+                case "Enemy":
+                    hit.collider.gameObject.GetComponent<Enemy> ().MakeDamage (damage);
+                    break;
+                case "Fortress":
+                    hit.collider.transform.parent.GetComponent<Fortress> ().MakeDamage (damage);
+                    break;
+            }
         }
 
         SoundManager.instance.PlaySound (SoundManager.SoundName.SHOOT);

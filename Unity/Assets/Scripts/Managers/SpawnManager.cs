@@ -46,7 +46,7 @@ public class SpawnManager : MonoBehaviour {
                     x = Random.Range (-100, 100);
                     z = 0 == Random.Range (0, 2) ? -100 : 100;  // Ligne haut / bas
                 }
-
+                
                 Instantiate (enemyPrefab, new Vector3(x, 0, z), Quaternion.identity);
             }
             yield return new WaitForSeconds (rate);

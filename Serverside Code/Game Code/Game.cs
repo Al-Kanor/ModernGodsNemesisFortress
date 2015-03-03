@@ -6,6 +6,10 @@ using PlayerIO.GameLibrary;
 using System.Drawing;
 
 namespace NemesisFortress {
+    public class Fortress {
+        public int life = 1000;
+    }
+    
     public class Player : BasePlayer {
         // Position
         public float px = 0;
@@ -20,9 +24,12 @@ namespace NemesisFortress {
 
     [RoomType ("NemesisFortress")]
     public class GameCode : Game<Player> {
+        Fortress fortress;
+
         // This method is called when an instance of your the game is created
         public override void GameStarted () {
             Console.WriteLine ("Game is started : " + RoomId);
+            fortress = new Fortress ();
             SpawnEnemy ();
         }
 
@@ -103,6 +110,11 @@ namespace NemesisFortress {
                             player.Send (message.Type, _player.ConnectUserId, message.GetString (0));
                         }
                     }
+                    break;
+                case "Fortress Damage":
+                    fortress.life -= message.GetInt (0);
+                    if (fortress.life < 0) fortress.life = 0;
+                    Broadcast (message.Type, fortress.life);
                     break;
                 case "Position":
                     _player.px = message.GetFloat (0);

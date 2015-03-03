@@ -29,6 +29,7 @@ public class MultiplayerManager : MonoBehaviour {
 	private bool joinedRoom = false;
 	private PlayerIOClient.Client pioClient;
     private Player player;
+    private Fortress fortress;
     #endregion
 
     #region Accesseurs
@@ -49,6 +50,10 @@ public class MultiplayerManager : MonoBehaviour {
 
     public void SendChat (string text) {
         pioConnection.Send ("Chat", text);
+    }
+
+    public void SendFortressDamage (int damage) {
+        pioConnection.Send ("Fortress Damage", damage);
     }
 
     public void SendStart () {
@@ -97,6 +102,9 @@ public class MultiplayerManager : MonoBehaviour {
                 case "Chat":
                     Debug.Log (message.GetString (0) + ":" + message.GetString (1));
                     break;
+                case "Fortress Damage":
+                    fortress.Life = message.GetInt (0);
+                    break;
                 case "Position":
                     break;
                 case "Enemy Spawn":
@@ -142,6 +150,7 @@ public class MultiplayerManager : MonoBehaviour {
 
     void Start () {
         player = GameObject.Find ("Player").GetComponent<Player> ();
+        fortress = GameObject.Find ("Fortress").GetComponent<Fortress> ();
         StartConnection ();
         StartCoroutine ("UpdateServer");
     }

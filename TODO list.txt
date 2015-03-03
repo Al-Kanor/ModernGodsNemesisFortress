@@ -1,0 +1,5 @@
+TODO list
+
+- death sound for enemies (explosion)
+- fix bug goal shoot impacts
+- implement headshot system for giants

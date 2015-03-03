@@ -11,6 +11,7 @@ Unity/*.sln
 Unity/*.suo
 Unity/*.user
 Unity/*.userprefs
+Unity/*.pdb
 Unity/*.pidb
 Unity/*.booproj
 Unity/*.exe

@@ -26,7 +26,7 @@ public class Shoot : MonoBehaviour {
 
             switch (hit.collider.gameObject.tag) {
                 case "Enemy":
-                    hit.collider.gameObject.GetComponent<Enemy> ().MakeDamage (damage);
+                    hit.collider.gameObject.GetComponent<Enemy> ().ReceiveDamage (damage);
                     break;
                 case "Fortress":
                     hit.collider.transform.parent.GetComponent<Fortress> ().MakeDamage (damage);

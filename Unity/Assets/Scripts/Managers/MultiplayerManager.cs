@@ -52,6 +52,10 @@ public class MultiplayerManager : MonoBehaviour {
         pioConnection.Send ("Chat", text);
     }
 
+    public void SendEnemyDamage (int enemyId, int damage) {
+        pioConnection.Send ("Enemy Damage", enemyId, damage);
+    }
+
     public void SendFortressDamage (int damage) {
         pioConnection.Send ("Fortress Damage", damage);
     }
@@ -88,11 +92,8 @@ public class MultiplayerManager : MonoBehaviour {
     void FixedUpdate () {
         // Process message queue
         foreach (PlayerIOClient.Message message in messages) {
-            //Debug.Log (Time.time + " - Message received from server " + message.ToString ());
+            //Debug.Log ("Message from server : " + message.ToString ());
             switch (message.Type) {
-                // Basic connection / deconnection
-
-                // Lobby Messages
                 case "PlayerJoined":
                     Debug.Log ("PlayerJoined : " + message.GetString (0));
                     break;
@@ -102,13 +103,22 @@ public class MultiplayerManager : MonoBehaviour {
                 case "Chat":
                     Debug.Log (message.GetString (0) + ":" + message.GetString (1));
                     break;
+                case "Debug":
+                    Debug.Log ("Message from server : " + message.GetString (0));
+                    break;
+                case "Enemy Damage":
+                    GameObject enemyObject = GameObject.Find ("Enemy" + message.GetInt (0));
+                    if (null != enemyObject) {
+                        enemyObject.GetComponent<Enemy> ().ApplyDamage (message.GetInt (1));
+                    }
+                    break;
                 case "Fortress Damage":
                     fortress.Life = message.GetInt (0);
                     break;
                 case "Position":
                     break;
                 case "Enemy Spawn":
-                    SpawnManager.instance.SpawnEnemy (message.GetString (0), float.Parse(message.GetString (1)), float.Parse(message.GetString (2)));
+                    SpawnManager.instance.SpawnEnemy (message.GetString (0), message.GetInt(1), float.Parse(message.GetString (2)), float.Parse(message.GetString (3)));
                     break;
             }
         }

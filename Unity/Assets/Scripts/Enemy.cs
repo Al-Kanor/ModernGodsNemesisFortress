@@ -9,22 +9,34 @@ public class Enemy : MonoBehaviour {
     #endregion
 
     #region Attributs privés
+    private int id;
     private NavMeshAgent navMeshAgent;
     private Transform target;
     #endregion
 
-    #region Méthodes publiques
-    public void Die () {
-        Instantiate (explosion, transform.position, transform.rotation);
-        Destroy (gameObject);
+    #region Accesseurs
+    public int Id {
+        get { return id; }
+        set { id = value; }
     }
+    #endregion
 
-    public void MakeDamage (int damage) {
+    #region Méthodes publiques
+    public void ApplyDamage (int damage) {
         life -= damage;
 
         if (life <= 0) {
             Die ();
         }
+    }
+
+    public void Die () {
+        Instantiate (explosion, transform.position, transform.rotation);
+        Destroy (gameObject);
+    }
+
+    public void ReceiveDamage (int damage) {
+        MultiplayerManager.instance.SendEnemyDamage (id, damage);
     }
     #endregion
 

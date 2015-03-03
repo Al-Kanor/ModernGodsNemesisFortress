@@ -22,14 +22,20 @@ namespace NemesisFortress {
         public float rz = 0;
     }
 
+    public class SpawnManager {
+        public int currentEnemyId = 1;
+    }
+
     [RoomType ("NemesisFortress")]
     public class GameCode : Game<Player> {
         Fortress fortress;
+        SpawnManager spawnManager;
 
         // This method is called when an instance of your the game is created
         public override void GameStarted () {
             Console.WriteLine ("Game is started : " + RoomId);
             fortress = new Fortress ();
+            spawnManager = new SpawnManager ();
             SpawnEnemy ();
         }
 
@@ -67,14 +73,17 @@ namespace NemesisFortress {
                 if (rand < 85) {   // 85% de chance de spawn un ennemi simple
                     enemyType = "simple";
                 }
-                else if (rand < 95) {  // 10% de chance de spawn un ennemi géant
+                else if (rand < 90) {  // 5% de chance de spawn un ennemi géant
                     enemyType = "giant";
+                }
+                else if (rand < 95) {  // 5% de chance de spawn un samouraï
+                    enemyType = "samurai";
                 }
                 else {  // 5% de chance de spawn une araignée
                     enemyType = "spider";
                 }
 
-                Broadcast ("Enemy Spawn", enemyType, x.ToString(), z.ToString());
+                Broadcast ("Enemy Spawn", enemyType, spawnManager.currentEnemyId++, x.ToString(), z.ToString());
             }
 
             ScheduleCallback (SpawnEnemy, (int) (spawnRate * 1000));
@@ -110,6 +119,9 @@ namespace NemesisFortress {
                             player.Send (message.Type, _player.ConnectUserId, message.GetString (0));
                         }
                     }
+                    break;
+                case "Enemy Damage":
+                    Broadcast (message.Type, message.GetInt (0), message.GetInt(1));
                     break;
                 case "Fortress Damage":
                     fortress.life -= message.GetInt (0);

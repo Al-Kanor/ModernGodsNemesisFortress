@@ -8,6 +8,10 @@ public class SpawnManager : MonoBehaviour {
     public GameObject simpleEnemyPrefab;
     public GameObject giantEnemyPrefab;
     public GameObject spiderEnemyPrefab;
+    public GameObject samuraiEnemyPrefab;
+    #endregion
+
+    #region Attributs privés
     #endregion
 
     #region Singleton
@@ -22,18 +26,27 @@ public class SpawnManager : MonoBehaviour {
     #endregion
 
     #region Méthodes publiques
-    public void SpawnEnemy (string enemyType, float x, float z) {
+    public void SpawnEnemy (string enemyType, int currentEnemyId, float x, float z) {
+        GameObject enemyObject = null;
+
         switch (enemyType) {
             case "simple":
-                Instantiate (simpleEnemyPrefab, new Vector3 (x, 0, z), Quaternion.identity);
+                enemyObject = (GameObject) Instantiate (simpleEnemyPrefab, new Vector3 (x, 0, z), Quaternion.identity);
                 break;
             case "giant":
-                Instantiate (giantEnemyPrefab, new Vector3 (x, 0, z), Quaternion.identity);
+                enemyObject = (GameObject) Instantiate (giantEnemyPrefab, new Vector3 (x, 0, z), Quaternion.identity);
                 break;
             case "spider":
-                Instantiate (spiderEnemyPrefab, new Vector3 (x, 0, z), Quaternion.identity);
+                enemyObject = (GameObject) Instantiate (spiderEnemyPrefab, new Vector3 (x, 0, z), Quaternion.identity);
+                break;
+            case "samurai":
+                enemyObject = (GameObject) Instantiate (samuraiEnemyPrefab, new Vector3 (x, 0, z), Quaternion.identity);
                 break;
         }
+
+        enemyObject.name = "Enemy" + currentEnemyId;
+        enemyObject.GetComponent<Enemy> ().Id = currentEnemyId;
+        currentEnemyId++;
     }
     #endregion
 

@@ -21,11 +21,28 @@ public class SpawnManager : MonoBehaviour {
     }
     #endregion
 
+    #region Méthodes publiques
+    public void SpawnEnemy (string enemyType, float x, float z) {
+        switch (enemyType) {
+            case "simple":
+                Instantiate (simpleEnemyPrefab, new Vector3 (x, 0, z), Quaternion.identity);
+                break;
+            case "giant":
+                Instantiate (giantEnemyPrefab, new Vector3 (x, 0, z), Quaternion.identity);
+                break;
+            case "spider":
+                Instantiate (spiderEnemyPrefab, new Vector3 (x, 0, z), Quaternion.identity);
+                break;
+        }
+    }
+    #endregion
+
     #region Méthodes privées
     void FixedUpdate () {
         
     }
 
+    /*
     IEnumerator SpawnEnemy () {
         do {
             int rand = Random.Range (0, 100);
@@ -37,7 +54,7 @@ public class SpawnManager : MonoBehaviour {
                  * 100, [-100, 100] => Colonne de droite
                  * [-100, 100], -100 => Ligne du bas
                  * [-100, 100], 100 => Ligne du haut
-                 */
+                 *//*
                 if (0 == Random.Range (0, 2)) {
                     // 1 chance sur 2 de spawn sur une colonne
                     x = 0 == Random.Range (0, 2) ? -100 : 100;  // Colonne gauche / droite
@@ -64,9 +81,10 @@ public class SpawnManager : MonoBehaviour {
             yield return new WaitForSeconds (rate);
         } while (true);
     }
+    */
 
     void Start () {
-        StartCoroutine ("SpawnEnemy");
+        //StartCoroutine ("SpawnEnemy");
     }
     #endregion
 }

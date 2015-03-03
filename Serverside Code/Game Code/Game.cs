@@ -43,24 +43,28 @@ namespace NemesisFortress {
                  * [-100, 100], -100 => Ligne du bas
                  * [-100, 100], 100 => Ligne du haut
                  */
-                if (0 == random.Next (0, 1)) {
+                if (0 == random.Next (0, 2)) {
                     // 1 chance sur 2 de spawn sur une colonne
-                    x = 0 == random.Next (0, 1) ? -100 : 100;  // Colonne gauche / droite
-                    z = random.Next (-100, 100);
+                    x = 0 == random.Next (0, 2) ? -100 : 100;  // Colonne gauche / droite
+                    z = random.Next (-100, 101);
                 }
                 else {
                     // 1 chance sur 2 de spawn sur une ligne
-                    x = random.Next (-100, 100);
+                    x = random.Next (-100, 101);
                     z = 0 == random.Next (0, 2) ? -100 : 100;  // Ligne haut / bas
                 }
 
                 string enemyType = "";
+                rand = random.Next (0, 100);
 
-                if (random.Next (0, 99) < 90) {   // 90% de chance de spawn un ennemi simple
+                if (rand < 85) {   // 85% de chance de spawn un ennemi simple
                     enemyType = "simple";
                 }
-                else {  // 10% de chance de spawn un ennemi géant
+                else if (rand < 95) {  // 10% de chance de spawn un ennemi géant
                     enemyType = "giant";
+                }
+                else {  // 5% de chance de spawn une araignée
+                    enemyType = "spider";
                 }
 
                 Broadcast ("Enemy Spawn", enemyType, x.ToString(), z.ToString());

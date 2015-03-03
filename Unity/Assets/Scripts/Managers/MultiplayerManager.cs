@@ -100,7 +100,7 @@ public class MultiplayerManager : MonoBehaviour {
                 case "Position":
                     break;
                 case "Enemy Spawn":
-                    Debug.Log ("Spawn " + message.GetString (0) + " enemy (" + message.GetString (1) + ", y, " + " enemy (" + message.GetString (2) + ")");
+                    SpawnManager.instance.SpawnEnemy (message.GetString (0), float.Parse(message.GetString (1)), float.Parse(message.GetString (2)));
                     break;
             }
         }

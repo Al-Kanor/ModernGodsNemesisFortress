@@ -9,6 +9,7 @@ public class SpawnManager : MonoBehaviour {
     public GameObject giantEnemyPrefab;
     public GameObject spiderEnemyPrefab;
     public GameObject samuraiEnemyPrefab;
+    public GameObject gorillaEnemyPrefab;
     #endregion
 
     #region Attributs privés
@@ -41,6 +42,9 @@ public class SpawnManager : MonoBehaviour {
                 break;
             case "samurai":
                 enemyObject = (GameObject) Instantiate (samuraiEnemyPrefab, new Vector3 (x, 0, z), Quaternion.identity);
+                break;
+            case "gorilla":
+                enemyObject = (GameObject) Instantiate (gorillaEnemyPrefab, new Vector3 (x, 0, z), Quaternion.identity);
                 break;
         }
 

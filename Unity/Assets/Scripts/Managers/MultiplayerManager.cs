@@ -16,6 +16,7 @@ public class MultiplayerManager : MonoBehaviour {
     #endregion
 
     #region Attributs publics
+    public bool debug = false;
     public string userId = "";
     public bool localhost;
     public bool developmentServer;
@@ -66,8 +67,17 @@ public class MultiplayerManager : MonoBehaviour {
     }
 	
     public void StartConnection () {
-		string playerId = SystemInfo.deviceUniqueIdentifier;
-		
+        string playerId;
+
+        if (debug) {
+            // SystemInfo.deviceUniqueIdentifier renvoie le même id si la machine lance plusieurs clients
+            // En mode debug on génère donc un id aléatoire en utilisant Random.Range()
+            playerId = "" + Random.Range (1, 1000000);
+        }
+        else {
+            playerId = SystemInfo.deviceUniqueIdentifier;
+        }
+
 		//user is just using this device with no account
 		Debug.Log ("Annonymous connect : " + playerId);	
 		userId = playerId;
@@ -120,6 +130,9 @@ public class MultiplayerManager : MonoBehaviour {
                 case "Enemy Spawn":
                     SpawnManager.instance.SpawnEnemy (message.GetString (0), message.GetInt(1), float.Parse(message.GetString (2)), float.Parse(message.GetString (3)));
                     break;
+                case "Player Joined":
+                    Debug.Log (message.GetString (0) + " has joined !");
+                    break;
             }
         }
 
@@ -133,9 +146,9 @@ public class MultiplayerManager : MonoBehaviour {
 
     void JoinGameRoom (string roomId) {
         pioClient.Multiplayer.CreateJoinRoom (
-            roomId,				//Room is the Alliance of the player 
-            "RoomType",							//The room type started on the server
-            false,									//Should the room be visible in the lobby?
+            roomId,
+            "RoomType",			// The room type started on the server
+            false,				// Should the room be visible in the lobby?
             null,
             null,
             delegate (Connection connection) {
@@ -147,7 +160,7 @@ public class MultiplayerManager : MonoBehaviour {
                 joinedRoom = true;
             },
             delegate (PlayerIOError error) {
-                Debug.LogError ("Error Joining Room: " + error.ToString ());
+                Debug.LogError ("Error Joining Room : " + error.ToString ());
             }
         );
     }
@@ -158,11 +171,20 @@ public class MultiplayerManager : MonoBehaviour {
         }
     }
 
+    IEnumerator SendPlayerPosition () {
+        do {
+            if (joinedRoom) {
+                pioConnection.Send ("Player Position", player.transform.position.x, player.transform.position.y, player.transform.position.z, player.transform.rotation.x, player.transform.rotation.y, player.transform.rotation.z);
+            }
+            yield return new WaitForSeconds (0.05f);    // Envoi toutes les 50 millisecondes pour un rendu fluide
+        } while (true);
+    }
+
     void Start () {
         player = GameObject.Find ("Player").GetComponent<Player> ();
         fortress = GameObject.Find ("Fortress").GetComponent<Fortress> ();
         StartConnection ();
-        StartCoroutine ("UpdateServer");
+        StartCoroutine ("SendPlayerPosition");
     }
 	
     void SuccessfullConnect (Client client) {
@@ -202,14 +224,6 @@ public class MultiplayerManager : MonoBehaviour {
         );
 
         pioClient = client;
-    }
-    
-    IEnumerator UpdateServer () {
-        do {
-            // Envoi des coordonnées du joueur
-            //pioConnection.Send ("Position", player.transform.position.x, player.transform.position.y, player.transform.position.z, player.transform.rotation.x, player.transform.rotation.y, player.transform.rotation.z);
-            yield return new WaitForSeconds (serverRate);
-        } while (true);
     }
     #endregion
 }

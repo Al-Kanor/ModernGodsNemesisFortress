@@ -70,17 +70,20 @@ namespace NemesisFortress {
                 string enemyType = "";
                 rand = random.Next (0, 100);
 
-                if (rand < 85) {   // 85% de chance de spawn un ennemi simple
+                if (rand < 80) {   // 80% de chance de spawn un ennemi simple
                     enemyType = "simple";
                 }
-                else if (rand < 90) {  // 5% de chance de spawn un ennemi géant
+                else if (rand < 88) {  // 8% de chance de spawn un ennemi géant
                     enemyType = "giant";
                 }
-                else if (rand < 95) {  // 5% de chance de spawn un samouraï
+                else if (rand < 94) {  // 6% de chance de spawn un samouraï
                     enemyType = "samurai";
                 }
-                else {  // 5% de chance de spawn une araignée
+                else if (rand < 98) {  // 4% de chance de spawn une araignée
                     enemyType = "spider";
+                }
+                else {  // 2% de chance de spawn un gorille
+                    enemyType = "gorilla";
                 }
 
                 Broadcast ("Enemy Spawn", enemyType, spawnManager.currentEnemyId++, x.ToString(), z.ToString());
@@ -98,8 +101,8 @@ namespace NemesisFortress {
         public override void UserJoined (Player _player) {
             foreach (Player player in Players) {
                 if (player.ConnectUserId != _player.ConnectUserId) {
-                    player.Send ("PlayerJoined", _player.ConnectUserId, 0, 0);
-                    _player.Send ("PlayerJoined", player.ConnectUserId, player.px, player.py, player.pz);
+                    player.Send ("Player Joined", _player.ConnectUserId, 0, 0);
+                    _player.Send ("Player Joined", player.ConnectUserId, player.px, player.py, player.pz);
                 }
             }
         }
@@ -128,7 +131,8 @@ namespace NemesisFortress {
                     if (fortress.life < 0) fortress.life = 0;
                     Broadcast (message.Type, fortress.life);
                     break;
-                case "Position":
+                case "Player Position":
+                    /*
                     _player.px = message.GetFloat (0);
                     _player.py = message.GetFloat (1);
                     _player.pz = message.GetFloat (2);
@@ -136,6 +140,8 @@ namespace NemesisFortress {
                     _player.ry = message.GetFloat (4);
                     _player.rz = message.GetFloat (5);
                     Broadcast (message.Type, _player.ConnectUserId, _player.px, _player.py, _player.pz, _player.rx, _player.ry, _player.rz);
+                    */
+                    Broadcast (message.Type, _player.ConnectUserId, message.GetFloat (0), message.GetFloat (1), message.GetFloat (2), message.GetFloat (3), message.GetFloat (4), message.GetFloat (5));
                     break;
             }
         }

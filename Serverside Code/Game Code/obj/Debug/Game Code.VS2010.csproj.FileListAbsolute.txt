@@ -15,6 +15,5 @@ C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Co
 C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Game Code\bin\Debug\NemesisFortress.pdb
 C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Game Code\bin\Debug\Player.IO GameLibrary.dll
 C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Game Code\bin\Debug\Player.IO GameLibrary.xml
-C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Game Code\obj\Debug\Game Code.VS2010.csprojResolveAssemblyReference.cache
 C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Game Code\obj\Debug\NemesisFortress.dll
 C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Game Code\obj\Debug\NemesisFortress.pdb

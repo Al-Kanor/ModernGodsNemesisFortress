@@ -104,10 +104,7 @@ public class MultiplayerManager : MonoBehaviour {
         foreach (PlayerIOClient.Message message in messages) {
             //Debug.Log ("Message from server : " + message.ToString ());
             switch (message.Type) {
-                case "PlayerJoined":
-                    Debug.Log ("PlayerJoined : " + message.GetString (0));
-                    break;
-                case "PlayerLeft":
+                case "Player Left":
                     Debug.Log ("PlayerLeft : " + message.GetString (0));
                     break;
                 case "Chat":
@@ -132,6 +129,9 @@ public class MultiplayerManager : MonoBehaviour {
                     break;
                 case "Player Joined":
                     Debug.Log (message.GetString (0) + " has joined !");
+                    break;
+                case "Player Position":
+                    Debug.Log ("Position of " + message.GetString (0) + " : (" + message.GetFloat (1) + ", " + message.GetFloat (2) + ", " + message.GetFloat (3) + ")");
                     break;
             }
         }
@@ -176,7 +176,7 @@ public class MultiplayerManager : MonoBehaviour {
             if (joinedRoom) {
                 pioConnection.Send ("Player Position", player.transform.position.x, player.transform.position.y, player.transform.position.z, player.transform.rotation.x, player.transform.rotation.y, player.transform.rotation.z);
             }
-            yield return new WaitForSeconds (0.05f);    // Envoi toutes les 50 millisecondes pour un rendu fluide
+            yield return new WaitForSeconds (0.2f);
         } while (true);
     }
 

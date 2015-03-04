@@ -36,7 +36,16 @@ namespace NemesisFortress {
             Console.WriteLine ("Game is started : " + RoomId);
             fortress = new Fortress ();
             spawnManager = new SpawnManager ();
+            SendPlayersPositions ();
             SpawnEnemy ();
+        }
+
+        public void SendPlayersPositions () {
+            // On envoie la position de chaque joueurs à tous les joueurs
+            foreach (Player player in Players) {
+                Broadcast ("Player Position", player.ConnectUserId, player.px, player.py, player.pz, player.rx, player.ry, player.rz);
+            }
+            ScheduleCallback (SendPlayersPositions, 50);    // Envoi toutes les 50 millisecondes pour un rendu fluide
         }
 
         public void SpawnEnemy () {
@@ -47,8 +56,8 @@ namespace NemesisFortress {
             int rand = random.Next (0, 99);
 
             if (rand < spawnProba) {
-                
                 float x = 0, z = 0;
+
                 /*
                  * Coordonnées de spawn (Carte vue du ciel, abscisses = x, ordonnées = z) :
                  * -100, [-100, 100] => Colonne de gauche
@@ -109,7 +118,7 @@ namespace NemesisFortress {
 
         // This method is called when a player leaves the game
         public override void UserLeft (Player player) {
-            Broadcast ("PlayerLeft", player.ConnectUserId);
+            Broadcast ("Player Left", player.ConnectUserId);
         }
 
         // This method is called when a player sends a message into the server code
@@ -132,16 +141,17 @@ namespace NemesisFortress {
                     Broadcast (message.Type, fortress.life);
                     break;
                 case "Player Position":
-                    /*
-                    _player.px = message.GetFloat (0);
-                    _player.py = message.GetFloat (1);
-                    _player.pz = message.GetFloat (2);
-                    _player.rx = message.GetFloat (3);
-                    _player.ry = message.GetFloat (4);
-                    _player.rz = message.GetFloat (5);
-                    Broadcast (message.Type, _player.ConnectUserId, _player.px, _player.py, _player.pz, _player.rx, _player.ry, _player.rz);
-                    */
-                    Broadcast (message.Type, _player.ConnectUserId, message.GetFloat (0), message.GetFloat (1), message.GetFloat (2), message.GetFloat (3), message.GetFloat (4), message.GetFloat (5));
+                    foreach (Player player in Players) {
+                        // Update player position
+                        if (player.ConnectUserId == _player.ConnectUserId) {
+                            player.px = message.GetFloat (0);
+                            player.py = message.GetFloat (1);
+                            player.pz = message.GetFloat (2);
+                            player.rx = message.GetFloat (3);
+                            player.ry = message.GetFloat (4);
+                            player.rz = message.GetFloat (5);
+                        }
+                    }
                     break;
             }
         }

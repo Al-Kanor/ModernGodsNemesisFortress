@@ -59,12 +59,13 @@ namespace NemesisFortress {
                 float x = 0, z = 0;
 
                 /*
+                 * Ancienne méthode de spawn (de tous les côtés) :
                  * Coordonnées de spawn (Carte vue du ciel, abscisses = x, ordonnées = z) :
                  * -100, [-100, 100] => Colonne de gauche
                  * 100, [-100, 100] => Colonne de droite
                  * [-100, 100], -100 => Ligne du bas
                  * [-100, 100], 100 => Ligne du haut
-                 */
+                 *
                 if (0 == random.Next (0, 2)) {
                     // 1 chance sur 2 de spawn sur une colonne
                     x = 0 == random.Next (0, 2) ? -100 : 100;  // Colonne gauche / droite
@@ -75,7 +76,15 @@ namespace NemesisFortress {
                     x = random.Next (-100, 101);
                     z = 0 == random.Next (0, 2) ? -100 : 100;  // Ligne haut / bas
                 }
+                */
 
+                /*
+                 * Nouvelle méthode de spawn (en face de la forteresse) :
+                 */
+
+                x = random.Next (-150, 151);
+                z = 250;
+                
                 string enemyType = "";
                 rand = random.Next (0, 100);
 

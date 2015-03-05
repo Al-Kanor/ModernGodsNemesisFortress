@@ -8,6 +8,7 @@ public class Shoot : MonoBehaviour {
     public float strength = 1000;   // Force de l'impact sur la cible
     public float scope = 1000; // Portée du tir
     public GameObject impact;   // Particule de l'impact
+    public Fortress fortress;
     #endregion
 
     #region Attribut privés
@@ -29,7 +30,7 @@ public class Shoot : MonoBehaviour {
                     hit.collider.gameObject.GetComponent<Enemy> ().ReceiveDamage (damage);
                     break;
                 case "Fortress":
-                    hit.collider.transform.parent.GetComponent<Fortress> ().MakeDamage (damage);
+                    fortress.MakeDamage (damage);
                     break;
             }
         }

@@ -4,6 +4,12 @@ C:\Users\Famille\Documents\Unity Projects\NemesisFortress\Serverside Code\Game C
 C:\Users\Famille\Documents\Unity Projects\NemesisFortress\Serverside Code\Game Code\bin\Debug\Player.IO GameLibrary.xml
 C:\Users\Famille\Documents\Unity Projects\NemesisFortress\Serverside Code\Game Code\obj\Debug\NemesisFortress.dll
 C:\Users\Famille\Documents\Unity Projects\NemesisFortress\Serverside Code\Game Code\obj\Debug\NemesisFortress.pdb
+C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Game Code\bin\Debug\NemesisFortress.dll
+C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Game Code\bin\Debug\NemesisFortress.pdb
+C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Game Code\bin\Debug\Player.IO GameLibrary.dll
+C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Game Code\bin\Debug\Player.IO GameLibrary.xml
+C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Game Code\obj\Debug\NemesisFortress.dll
+C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Game Code\obj\Debug\NemesisFortress.pdb
 C:\Users\Public\Documents\Unity Projects\NemesisFortress\Serverside Code\Game Code\bin\Debug\NemesisFortress.dll
 C:\Users\Public\Documents\Unity Projects\NemesisFortress\Serverside Code\Game Code\bin\Debug\NemesisFortress.pdb
 C:\Users\Public\Documents\Unity Projects\NemesisFortress\Serverside Code\Game Code\bin\Debug\Player.IO GameLibrary.dll
@@ -11,9 +17,3 @@ C:\Users\Public\Documents\Unity Projects\NemesisFortress\Serverside Code\Game Co
 C:\Users\Public\Documents\Unity Projects\NemesisFortress\Serverside Code\Game Code\obj\Debug\Game Code.VS2010.csprojResolveAssemblyReference.cache
 C:\Users\Public\Documents\Unity Projects\NemesisFortress\Serverside Code\Game Code\obj\Debug\NemesisFortress.dll
 C:\Users\Public\Documents\Unity Projects\NemesisFortress\Serverside Code\Game Code\obj\Debug\NemesisFortress.pdb
-C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Game Code\bin\Debug\NemesisFortress.dll
-C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Game Code\bin\Debug\NemesisFortress.pdb
-C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Game Code\bin\Debug\Player.IO GameLibrary.dll
-C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Game Code\bin\Debug\Player.IO GameLibrary.xml
-C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Game Code\obj\Debug\NemesisFortress.dll
-C:\Users\sig4gp\Documents\SIG\Unity\Unity Projects\NemesisFortress\Serverside Code\Game Code\obj\Debug\NemesisFortress.pdb

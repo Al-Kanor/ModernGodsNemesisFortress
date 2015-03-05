@@ -40,7 +40,7 @@ public class Shoot : MonoBehaviour {
     void Start () {
         timer = rate;
     }
-
+        
     void FixedUpdate () {
         if (timer <= 0) {
             canFire = true;

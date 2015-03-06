@@ -10,7 +10,7 @@ public class Door : MonoBehaviour {
     void OnTriggerEnter (Collider other) {
         if ("Enemy" == other.gameObject.tag) {
             Camera.main.GetComponent<WHCameraShake> ().doShake ();
-            fortress.MakeDamage (other.GetComponent<Enemy> ().strength);
+            fortress.ReceiveDamage (other.GetComponent<Enemy> ().strength);
             other.GetComponent<Enemy> ().Die ();
         }
     }

@@ -30,7 +30,7 @@ public class Shoot : MonoBehaviour {
                     hit.collider.gameObject.GetComponent<Enemy> ().ReceiveDamage (damage);
                     break;
                 case "Fortress":
-                    fortress.MakeDamage (damage);
+                    fortress.ReceiveDamage (damage);
                     break;
             }
         }

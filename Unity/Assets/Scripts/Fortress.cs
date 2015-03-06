@@ -19,20 +19,15 @@ public class Fortress : MonoBehaviour {
         set {
             life = value;
             UpdateUI ();
+            if (life <= 0) {
+                Destroy (gameObject);
+            }
         }
     }
     #endregion
 
     #region Méthodes publiques
-    public void MakeDamage (int damage) {
-        /*
-        life = Mathf.Clamp (life - damage, 0, lifeMax);
-        UpdateUI ();
-
-        if (life <= 0) {
-            Destroy (gameObject);
-        }
-        */
+    public void ReceiveDamage (int damage) {
         MultiplayerManager.instance.SendFortressDamage (damage);
     }
 

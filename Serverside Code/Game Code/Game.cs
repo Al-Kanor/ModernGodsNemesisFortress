@@ -31,9 +31,29 @@ namespace NemesisFortress {
         Fortress fortress;
         SpawnManager spawnManager;
 
+        public void TestAddUser (string username) {
+            DatabaseObject user = new DatabaseObject ();
+            user.Set("username", username);
+            user.Set("score", 0);
+            PlayerIO.BigDB.CreateObject ("User", null, user, delegate (DatabaseObject dbo) {
+                Console.WriteLine ("ok");
+            }, delegate (PlayerIOError error) {
+                Console.WriteLine (error.Message);
+            });
+        }
+
+        public void LoadUser (string username) {
+            PlayerIO.BigDB.Load ("User", "dfjkdh", delegate (DatabaseObject dbo) {
+                Console.WriteLine ("ok");
+            }, delegate (PlayerIOError error) {
+                Console.WriteLine (error.Message);
+            });
+        }
+
         // This method is called when an instance of your the game is created
         public override void GameStarted () {
             Console.WriteLine ("Game is started : " + RoomId);
+            TestAddUser ("toto");
             fortress = new Fortress ();
             spawnManager = new SpawnManager ();
             SendPlayersPositions ();

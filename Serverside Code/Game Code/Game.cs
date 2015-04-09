@@ -43,10 +43,18 @@ namespace NemesisFortress {
         }
 
         public void LoadUser (string username) {
+
             PlayerIO.BigDB.Load ("User", "dfjkdh", delegate (DatabaseObject dbo) {
                 Console.WriteLine ("ok");
             }, delegate (PlayerIOError error) {
                 Console.WriteLine (error.Message);
+            });
+            
+        }
+
+        public void TestLoadWithIndex() {
+            PlayerIO.BigDB.LoadSingle ("User", "ByPlayer", new object[]{"toto"}, delegate (DatabaseObject user) {
+                Console.WriteLine ("ok");
             });
         }
 
